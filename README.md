@@ -1,5 +1,7 @@
 # Timeroast-ng
 
+[![PyPI](https://img.shields.io/pypi/v/timeroast_ng)](https://pypi.org/project/timeroast_ng/)
+
 Timeroasting ([Paper - Timeroasting, Trustroasting and Computer Spraying](https://www.secura.com/uploads/whitepapers/Secura-WP-Timeroasting-v3.pdf) by SecuraBV;
 their [Repo - Timeroasting](https://github.com/SecuraBV/Timeroast)) is a simple attack
 technnique that leverages the design concept of Microsoft's authentication extension
@@ -28,9 +30,14 @@ python3 timeroast-ng.py -r1000-2000 -T5 <dc_ip>
 ```
 
 Installation via `pip`:
-```bash
-pip install git+https://github.com/MatrixEditor/timeroast-ng
-```
+1. via pypi
+  ```bash
+  pip install timeroast-ng
+  ```
+2. or using git
+  ```bash
+  pip install git+https://github.com/MatrixEditor/timeroast-ng
+  ```
 
 ## Background
 
